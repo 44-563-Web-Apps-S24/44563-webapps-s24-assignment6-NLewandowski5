@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animal Java Script Page</title>
+</head>
+<body>
+
+<h2>Animal game by Nolan Lewandowski</h2>
+
+<form>
+    <label for="hiddenAnimal">The hidden animal type:</label>
+    <input type="password" id="hiddenAnimal" value="Chicken">
+
+    <label for="guessAnimal">Guess the animal:</label>
+    <input type="text" id="guessAnimal">
+
+    <button type="button" onclick="checkAnimal()">Check the guess</button>
+</form>
+
+<p id="resultHolder">Correct: 0, Wrong: 0</p>
+
+<script>
+
+    let wrong = 0;
+    let correct = 0;
+
+    function checkAnimal() {
+        const hiddenAnimalValue = document.getElementById('hiddenAnimal').value;
+        const guessAnimalValue = document.getElementById('guessAnimal').value;
+        if (hiddenAnimalValue === guessAnimalValue) {
+            correct++;
+            alert('Ruff ruff');
+        } else {
+            wrong++;
+            alert('Grrrr');
+        }
+        const resultHolder = document.getElementById('resultHolder');
+        resultHolder.innerHTML = `Correct: ${correct}, Wrong: ${wrong}`;
+    }
+</script>
+
+</body>
+</html> 
