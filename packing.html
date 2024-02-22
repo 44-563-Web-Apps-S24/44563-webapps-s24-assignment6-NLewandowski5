@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>Checkboxes Java Script Example</title>
+</head>
+
+<body>
+
+<h2>Nolan Lewandowski packs for a trip</h2>
+
+<form id="packingForm">
+    <label>
+        <input type="checkbox" id="packLight" value="True"> Pack light
+    </label>
+    <label>
+        <input type="checkbox" id="carryOn" value="True"> Carry on
+    </label>
+    <label>
+        <input type="checkbox" id="tablet" value="False"> Tablet
+    </label>
+</form>
+
+<button onclick="selectPack()">Select for packing</button>
+
+<p id="results"></p>
+
+<script>
+
+let my_pack = {};
+
+function selectPack() {
+    my_pack = {};
+
+    my_pack.light = document.getElementById('packLight').checked;
+    my_pack.carry = document.getElementById('carryOn').checked;
+    my_pack.tablet = document.getElementById('tablet').checked;
+
+    document.getElementById('results').innerHTML = JSON.stringify(my_pack);
+}
+</script>
+</body>
+</html> 
