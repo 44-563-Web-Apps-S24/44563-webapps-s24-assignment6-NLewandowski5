@@ -39,5 +39,35 @@
     }
 </script>
 
+<div id="imageContainer">
+    <img src="AJ.jpg" alt="Apple Juice" width="150" height="150" onclick="selectImage()">
+</div>
+
+<script>
+
+let useImage = 1;
+
+function selectImage() {
+    const imageContainer = document.getElementById('imageContainer');
+  
+    switch (useImage) {
+        case 1:
+            imageContainer.innerHTML = `<img src="DrPepper.jpg" alt="Dr Pepper" width="150" height="150" onclick="selectImage()">`;
+            useImage = 2;
+            break;
+        case 2:
+            imageContainer.innerHTML = `<img src="Lemonade.jpg" alt="Lemonade" width="150" height="150" onclick="selectImage()">`;
+            useImage = 3;
+            break;
+        case 3:
+            imageContainer.innerHTML = `<img src="AJ.jpg" alt="Apple Juice" width="150" height="150" onclick="selectImage()">`;
+            useImage = 1;
+            break;
+        default:
+            break;
+    }
+}
+</script>
+
 </body>
 </html> 
