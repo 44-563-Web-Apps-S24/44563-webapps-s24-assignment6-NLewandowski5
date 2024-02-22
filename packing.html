@@ -25,6 +25,16 @@
 
 <p id="results"></p>
 
+<form>
+    <label for="travelMonth">Enter travel month:</label>
+    <input type="text" id="travelMonth" value="May"><br>
+
+    <label for="price">Enter price:</label>
+    <input type="text" id="price" value=""><br>
+
+    <button onclick="updatePack()">Update the pack</button>
+</form>
+
 <script>
 
 let my_pack = {};
@@ -35,6 +45,17 @@ function selectPack() {
     my_pack.light = document.getElementById('packLight').checked;
     my_pack.carry = document.getElementById('carryOn').checked;
     my_pack.tablet = document.getElementById('tablet').checked;
+
+    document.getElementById('results').innerHTML = JSON.stringify(my_pack);
+}
+
+function updatePack() {
+ 
+    const travelMonth = document.getElementById('travelMonth').value;
+
+    const tripPrice = document.getElementById('price').value;
+
+    my_pack[travelMonth] = tripPrice;
 
     document.getElementById('results').innerHTML = JSON.stringify(my_pack);
 }
